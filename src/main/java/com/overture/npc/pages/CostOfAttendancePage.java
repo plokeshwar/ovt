@@ -48,8 +48,34 @@ public class CostOfAttendancePage extends PageControls {
 	
 	public void clickTuitionFeeLink(){
 		click(TUITION_FEE_LINK);
+		pause(2000);
 		ReporterText("Clicked on Tuition Fee Link");
 	}
+	
+	public void clickRoomBoardLink(){
+		click(ROOM_BOARD_LINK);
+		pause(2000);
+		ReporterText("Clicked on Room Board Link");
+	}
+	
+	public void clickTransportationLink(){
+		click(TRANSPORTATION_LINK);
+		pause(2000);
+		ReporterText("Clicked on Transportation Link");
+	}
+	
+	public void clickPersonalExpensesLink(){
+		click(PERSONAL_EXPENSES_LINK);
+		pause(2000);
+		ReporterText("Clicked on Personal Expenses Link");
+	}
+	
+	public void clickBookAndSuppliesLink(){
+		click(BOOK_SUPPLIES_LINK);
+		pause(2000);
+		ReporterText("Clicked on Book And Supplies Link");
+	}
+	
 	
 	public void clickFixedLink(){
 		click(FIXED_LINK);
@@ -107,25 +133,39 @@ public class CostOfAttendancePage extends PageControls {
 	}
 	
 	public String assertTitle(String expected, String actual) {
+		
 		if (expected.equalsIgnoreCase(actual)) {
+			ReporterSuccess("Expected [ "+expected+" ]");
+			ReporterSuccess("Actual [ "+actual+" ]");
 			return captureElementScreenShot(PAGE_TITLE);
 		} else {
+			ReporterError("Expected [ "+expected+" ]");
+			ReporterError("Actual [ "+actual+" ]");
 			return captureDriverScreenShot();
 		}
 	}
 	
 	public String assertBoolean(boolean expected, boolean actual, By by) {
 		if (expected == actual) {
+			ReporterSuccess("Expected [ "+expected+" ]");
+			ReporterSuccess("Actual [ "+actual+" ]");
 			return captureElementScreenShot(by);
 		} else {
+			ReporterError("Expected [ "+expected+" ]");
+			ReporterError("Actual [ "+actual+" ]");
 			return captureDriverScreenShot();
 		}
 	}
 	
 	public String assertText(String expected, String actual, By by) {
+		
 		if (expected.equalsIgnoreCase(actual)) {
+			ReporterSuccess("Expected [ "+expected+" ]");
+			ReporterSuccess("Actual [ "+actual+" ]");
 			return captureElementScreenShot(by);
 		} else {
+			ReporterError("Expected [ "+expected+" ]");
+			ReporterError("Actual [ "+actual+" ]");
 			return captureDriverScreenShot();
 		}
 	}

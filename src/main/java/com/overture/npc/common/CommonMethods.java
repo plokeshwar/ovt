@@ -19,5 +19,14 @@ public class CommonMethods extends Reporting {
 		}
 		return CONFIG;	
 	}
+	
+	public String getRandomNumberString(int size){
+		String tmp = String.valueOf(System.currentTimeMillis());
+		tmp = tmp.substring(tmp.length()-size, tmp.length());
+		if(tmp.startsWith("0")){
+			tmp="1"+tmp.substring(1,tmp.length());
+		}
+		return tmp;
+	}
 
 }

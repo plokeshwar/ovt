@@ -1,24 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Default suite" parallel="tests" thread-count="2">
-  <test verbose="2" name="TS_01">
+<suite name="Default suite" parallel="tests" thread-count="3">
+  <test verbose="2" name="TS_01_ValidateLogin">
     <classes>
       <class name="com.overture.npc.testcases.TS_01_ValidateLogin"/>
     </classes>
   </test>
-  <test verbose="2" name="TS_02">
+  <test verbose="2" name="TS_02_VerifyHomePage">
     <classes>
       <class name="com.overture.npc.testcases.TS_02_VerifyHomePage"/>
     </classes>
   </test> 
-  <test verbose="2" name="TS_03">
+  <test verbose="2" name="TS_03_Verify_AccountTab_SubLinkNavigation">
     <classes>
       <class name="com.overture.npc.testcases.TS_03_Verify_AccountTab_SubLinkNavigation"/>
     </classes>
   </test> 
-  <test verbose="2" name="TS_04">
+  <test verbose="2" name="TS_04_Verify_AccountTab_AccountSettingsPage">
     <classes>
       <class name="com.overture.npc.testcases.TS_04_Verify_AccountTab_AccountSettingsPage"/>
+    </classes>
+  </test> 
+   <test verbose="2" name="TS_45_Verify_COA_TuitionNFees">
+    <classes>
+      <class name="com.overture.npc.testcases.TS_45_Verify_COA_TuitionNFees"/>
+    </classes>
+  </test> 
+   <test verbose="2" name="TS_46_Verify_COA_RoomNBoard">
+    <classes>
+      <class name="com.overture.npc.testcases.TS_46_Verify_COA_RoomNBoard"/>
+    </classes>
+  </test> 
+   <test verbose="2" name="TS_47_Verify_COA_BooksNSupplies">
+    <classes>
+      <class name="com.overture.npc.testcases.TS_47_Verify_COA_BooksNSupplies"/>
+    </classes>
+  </test> 
+   <test verbose="2" name="TS_48_Verify_COA_Transportation">
+    <classes>
+      <class name="com.overture.npc.testcases.TS_48_Verify_COA_Transportation"/>
+    </classes>
+  </test> 
+   <test verbose="2" name="TS_49_Verify_COA_PersonalExpenses">
+    <classes>
+      <class name="com.overture.npc.testcases.TS_49_Verify_COA_PersonalExpenses"/>
     </classes>
   </test> 
 </suite> <!-- Default suite -->

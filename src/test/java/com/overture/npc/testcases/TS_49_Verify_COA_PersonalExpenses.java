@@ -14,26 +14,27 @@ import com.overture.npc.pages.CostOfAttendancePage;
 import com.overture.npc.pages.HomePage;
 import com.overture.npc.pages.LoginPage;
 
-public class TS_45_Verify_COA_TuitionNFees extends CommonMethods {
+
+
+public class TS_49_Verify_COA_PersonalExpenses extends CommonMethods{
 	String className = this.getClass().getSimpleName();
 	String homePageUrl;
 	WebDriver driver = null;
-	boolean flag=false;
-	
+	boolean flag = false;
+
 	LoginPage loginPage = null;
 	HomePage homePage = null;
 	CostOfAttendancePage COAPage = null;
 	
-	
 	@Test(priority = 1)
-	public void TC_01_Validate_TuitionNFeesLink_Navigation() {
-		String testcaseName = new Object(){}.getClass().getEnclosingMethod().getName();
-		ReporterTextBold("Executing Test Case : "+testcaseName);
-		
-		String expected = "Edit Expense - Tuition & Fees";
-		
-		String actual= COAPage.getText(COAPage.PAGE_TITLE);
-		
+	public void TC_01_Validate_TransportationLink_Navigation() {
+		String testcaseName = new Object() {
+		}.getClass().getEnclosingMethod().getName();
+		ReporterTextBold("Executing Test Case : " + testcaseName);
+
+		String expected = "Edit Expense - Personal Expenses";
+		String actual = COAPage.getText(COAPage.PAGE_TITLE);
+
 		String screenshot = COAPage.assertTitle(expected, actual);
 		ReporterLink(screenshot);
 		System.out.println("Asserting the test case");
@@ -42,9 +43,9 @@ public class TS_45_Verify_COA_TuitionNFees extends CommonMethods {
 	}
 
 	//======================================================================================================
-
+	
 	@Test(priority = 2)
-	public void TC_02_Validate_TuitionNFeesLink_FixedLink() {
+	public void TC_02_Validate_PersonalExpensesLink_FixedLink() {
 		String testcaseName = new Object(){}.getClass().getEnclosingMethod().getName();
 		ReporterTextBold("Executing Test Case : "+testcaseName);
 
@@ -52,7 +53,6 @@ public class TS_45_Verify_COA_TuitionNFees extends CommonMethods {
 		
 		boolean expected = true;
 		boolean actual= COAPage.rowOneDisplayed();
-		
 		
 		String screenshot = COAPage.assertBoolean(expected, actual, COAPage.ROW_ONE);
 		ReporterLink(screenshot);
@@ -64,8 +64,8 @@ public class TS_45_Verify_COA_TuitionNFees extends CommonMethods {
 	//======================================================================================================
 	
 	
-		@Test(priority = 3)
-	public void TC_03_Validate_TuitionNFeesLink_CancelButton() {
+	@Test(priority = 3)
+	public void TC_03_Validate_PersonalExpensesLink_CancelButton() {
 		String testcaseName = new Object(){}.getClass().getEnclosingMethod().getName();
 		ReporterTextBold("Executing Test Case : "+testcaseName);
 
@@ -85,7 +85,7 @@ public class TS_45_Verify_COA_TuitionNFees extends CommonMethods {
 	
 	
 	@Test(priority = 4)
-	public void TC_04_Validate_TuitionNFeesLink_SaveChangesButton() {
+	public void TC_04_Validate_PersonalExpensesLink_SaveChangesButton() {
 		String testcaseName = new Object(){}.getClass().getEnclosingMethod().getName();
 		ReporterTextBold("Executing Test Case : "+testcaseName);
 
@@ -107,7 +107,7 @@ public class TS_45_Verify_COA_TuitionNFees extends CommonMethods {
 	
 
 	@Test(priority = 5)
-	public void TC_05_Validate_TuitionNFeesLink_SaveChanges_popUP_OK_function() {
+	public void TC_05_Validate_PersonalExpensesLink_SaveChanges_popUP_OK_function() {
 		String testcaseName = new Object(){}.getClass().getEnclosingMethod().getName();
 		ReporterTextBold("Executing Test Case : "+testcaseName);
 		
@@ -118,7 +118,7 @@ public class TS_45_Verify_COA_TuitionNFees extends CommonMethods {
 		COAPage.clickSaveChangesButton();
 		COAPage.clickYesButtonPopUp();
 		
-		COAPage.clickTuitionFeeLink();
+		COAPage.clickPersonalExpensesLink();
 		
 		String expected = testData;
 		String actual= COAPage.getFixedValueAttribute();
@@ -140,7 +140,7 @@ public class TS_45_Verify_COA_TuitionNFees extends CommonMethods {
 		homePage.performMouseOverNetPriceTab();
 		
 		COAPage = homePage.clickCOALink();
-		COAPage.clickTuitionFeeLink();
+		COAPage.clickPersonalExpensesLink();
 		
 			if(COAPage.elementSize(COAPage.COA_FIXED_ROWS)>2){
 				COAPage.deleteCOAExpense();
