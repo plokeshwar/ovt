@@ -2,6 +2,8 @@ package com.overture.npc.common;
 
 import java.io.FileInputStream;
 import java.net.URL;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Properties;
 
 import org.openqa.selenium.Platform;
@@ -58,16 +60,19 @@ public class WebDriverFactory extends Reporting {
 		case CHROME:
 			System.out.println("Chrome Driver Initiated");
 			driver = getChromeDriver();
+			System.out.println("Chrome Driver Started Successfully");
 			break;
 
 		case FIREFOX:
 			System.out.println("Firefox Driver Initiated");
 			driver = getFirefoxDriver();
+			System.out.println("Firefox Driver Started Successfully");
 			break;
 
 		case IE:
 			System.out.println("IE Driver Initiated");
 			driver = getIE();
+			System.out.println("IE Driver Started Successfully");
 			break;
 
 		}
@@ -76,18 +81,23 @@ public class WebDriverFactory extends Reporting {
 	}
 
 	public static WebDriver getChromeDriver() {
-		DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+		Map<String, Object> prefs = new HashMap<String, Object>();
+	    prefs.put("credentials_enable_service", false);
+	    prefs.put("profile.password_manager_enabled", false);
+
 		ChromeOptions options = new ChromeOptions();
-		options.addArguments("incognito");
-		capabilities.setCapability(ChromeOptions.CAPABILITY, options);
+		options.addArguments("start-maximized");
+		options.addArguments("disable-infobars");
+		options.setExperimentalOption("prefs", prefs);
+		
 		if (MacPlatform()) {
 			System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
 		} else {
 			System.setProperty("webdriver.chrome.driver",
-					System.getProperty("usr.dir") + "/drivers/windows/chromedriver.exe");
+					System.getProperty("user.dir") + "/drivers/windows/chromedriver.exe");
 		}
 
-		System.out.println(" HELLO CHROME DRIVER");
+		System.out.println("STARTING CHROME DRIVER");
 
 		return new ChromeDriver(options);
 	}
@@ -98,7 +108,7 @@ public class WebDriverFactory extends Reporting {
 		capab.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 
 		System.setProperty("webdriver.ie.driver",
-				System.getProperty("usr.dir") + "/drivers/windows/IEDriverServer.exe");
+				System.getProperty("user.dir") + "/drivers/windows/IEDriverServer.exe");
 		
 		return new InternetExplorerDriver(capab);
 	}

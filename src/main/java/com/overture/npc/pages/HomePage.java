@@ -10,7 +10,6 @@ public class HomePage extends PageControls {
 	WebDriver driver;
 	
 	public HomePage(WebDriver driver) {
-		
 		super(driver);
 		this.driver = driver;
 		// TODO Auto-generated constructor stub
@@ -27,59 +26,6 @@ public class HomePage extends PageControls {
 	public By PREVIEW_LINK = By.linkText("Preview");
 	public By ACCOUNTS_MENU = By.xpath("//div[@id='menuTabs-1']");
 	
-	
-	public void clickAccountsTab(){
-		click(ACCOUNT_TAB);
-	}
-	
-	public String getPageTitle(String pageName) {
-		System.out.println("Getting "+pageName+" Page Title.");
-		ReporterText("Extracting "+pageName+" Page Title");
-		pause(2000);
-		return getText(PAGE_TITLE);
-	}
-	
-	public String assertTitle(String expected, String actual) {
-		if (expected.equalsIgnoreCase(actual)) {
-			return captureElementScreenShot(PAGE_TITLE);
-		} else {
-			return captureDriverScreenShot();
-		}
-	}
-	
-	public AccountSettingsPage clickAccountSettingsLink(){
-		click(ACCOUNT_SETTINGS_LINK);
-		return new AccountSettingsPage(this.driver);
-	}
-	
-	public void clickCalculationReportLink(){
-		click(CALCULATION_REPORT_LINK);
-		ReporterText("Clicked on Calculation report link.");
-	}
-	
-	public void clickTrafficSummaryLink(){
-		click(TRAFFIC_SUMMARY_LINK);
-		ReporterText("Clicked on Traffic Summary link.");
-	}
-	
-	public void clickPreviewLink(){
-		click(PREVIEW_LINK);
-		pause(2000);
-		ReporterText("Clicked on Preview link.");
-	}
-	
-	public ArrayList<String> getAccountTabSubMenu(){
-		return getAllLinksByClass(ACCOUNTS_MENU);
-	}
-	
-	public ArrayList<String> getNetPriceSubMenu(){
-		return getAllLinksByClass(NET_PRICE_MENU);
-	}
-	
-	public ArrayList<String> getContentManagementSubMenu(){
-		return getAllLinksByClass(CONTENT_MANAGEMENT_MENU);
-	}
-	
 	/*Net Price Tab and related links*/
 	
 	public By NET_PRICE_TAB = By.id("ui-id-2");
@@ -93,6 +39,13 @@ public class HomePage extends PageControls {
 	
 	public By NET_PRICE_MENU = By.xpath("//div[@id='menuTabs-2']");
 	
+	
+	public CostOfAttendancePage clickCOALink(){
+		click(COA_LINK);
+		ReporterText("Clicking on COA link Under Net Price Tab.");
+		return new CostOfAttendancePage(driver);
+		
+	}
 	
 	/*Content Management Tab and related links*/
 	
@@ -157,6 +110,57 @@ public class HomePage extends PageControls {
 		return createArrayList(text);
 	}
 	
+	public void clickAccountsTab(){
+		click(ACCOUNT_TAB);
+	}
+	
+	public String getPageTitle(String pageName) {
+		System.out.println("Getting "+pageName+" Page Title.");
+		ReporterText("Extracting "+pageName+" Page Title");
+		pause(2000);
+		return getText(PAGE_TITLE);
+	}
+	
+	public String assertTitle(String expected, String actual) {
+		if (expected.equalsIgnoreCase(actual)) {
+			return captureElementScreenShot(PAGE_TITLE);
+		} else {
+			return captureDriverScreenShot();
+		}
+	}
+	
+	public AccountSettingsPage clickAccountSettingsLink(){
+		click(ACCOUNT_SETTINGS_LINK);
+		return new AccountSettingsPage(this.driver);
+	}
+	
+	public void clickCalculationReportLink(){
+		click(CALCULATION_REPORT_LINK);
+		ReporterText("Clicked on Calculation report link.");
+	}
+	
+	public void clickTrafficSummaryLink(){
+		click(TRAFFIC_SUMMARY_LINK);
+		ReporterText("Clicked on Traffic Summary link.");
+	}
+	
+	public void clickPreviewLink(){
+		click(PREVIEW_LINK);
+		pause(2000);
+		ReporterText("Clicked on Preview link.");
+	}
+	
+	public ArrayList<String> getAccountTabSubMenu(){
+		return getAllLinksByClass(ACCOUNTS_MENU);
+	}
+	
+	public ArrayList<String> getNetPriceSubMenu(){
+		return getAllLinksByClass(NET_PRICE_MENU);
+	}
+	
+	public ArrayList<String> getContentManagementSubMenu(){
+		return getAllLinksByClass(CONTENT_MANAGEMENT_MENU);
+	}
 	
 	
 }

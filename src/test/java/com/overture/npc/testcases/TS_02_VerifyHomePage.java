@@ -17,6 +17,7 @@ import com.overture.npc.pages.HomePage;
 import com.overture.npc.pages.LoginPage;
 
 public class TS_02_VerifyHomePage extends CommonMethods {
+	String className = this.getClass().getSimpleName();
 	
 	String homePageUrl;
 

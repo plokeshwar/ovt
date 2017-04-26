@@ -1,8 +1,11 @@
 package com.overture.npc.pages;
 
+import java.util.Properties;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import com.overture.npc.common.CommonMethods;
 import com.overture.npc.common.PageControls;
 
 public class LoginPage extends PageControls {
@@ -28,14 +31,19 @@ public class LoginPage extends PageControls {
 
 	public void enterUserName(String username){
 		type(USERNAME, username);
+		username = mask(username);
+		ReporterText("Entered Username : "+username);
 	}
 	
 	public void enterPassword(String password){
 		type(PASSWORD, password);
+		password = mask(password);
+		ReporterText("Entered Password : "+password);
 	}
 	
 	public void clickLogin(){
 		click(LOGIN_BUTTON);
+		ReporterText("Clicking on Login Button.");
 	}
 	
 	public void enterResetUserID(String testData){
@@ -50,7 +58,14 @@ public class LoginPage extends PageControls {
 		click(RESET_BUTTON);
 	}
 	
-	
+	public HomePage login() {
+		Properties props = new CommonMethods().getProperties();
+		enterUserName(props.getProperty("username"));
+		enterPassword(props.getProperty("password"));
+		clickLogin();
+		return new HomePage(driver);
+	}
+
 	
 	public HomePage login(String username, String password) {
 		enterUserName(username);
@@ -59,11 +74,7 @@ public class LoginPage extends PageControls {
 		return new HomePage(driver);
 	}
 
-	public void login() {
-		login("seoAdmin","Overture1");
-	}
-
-	public String getErrorText() {
+		public String getErrorText() {
 		return getText(ERROR_MESSAGE);
 	}
 
@@ -74,6 +85,30 @@ public class LoginPage extends PageControls {
 	public String getPasswordResetBoxTitle() {
 		return getText(PASSWORD_RESET_DIALOG_TITLE);
 	}
+	
+	public String mask(String data){
+		String tmp = "";
+		
+		for(int i=0;i<data.length();i++){
+			
+			if(i==0 || i==1){
+			tmp = tmp+String.valueOf(data.charAt(i));
+			}else if(i==data.length()-2 || i==data.length()-1){
+				tmp = tmp+String.valueOf(data.charAt(i));
+			}else{
+				tmp = tmp+"x";
+			}
+		}
+		
+		return tmp;
+		
+	}
+	
+	public static void main(String[] args) {
+		System.out.println(new LoginPage(null).mask("PRAVIN"));
+	}
+	
+	
 	
 	
 

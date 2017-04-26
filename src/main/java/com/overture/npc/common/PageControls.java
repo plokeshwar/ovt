@@ -34,6 +34,14 @@ public class PageControls extends Reporting{
 		waitForElement(by).click();
 	}
 	
+	public int elementSize(List<WebElement> element){
+		return element.size();
+	}
+	
+	public int elementSize(By by){
+		return waitForElements(by).size();
+	}
+	
 	public void click(WebElement element){
 		element.click();
 	}
@@ -278,6 +286,40 @@ public class PageControls extends Reporting{
 			}
 		}
 		return driver.findElement(by);
+
+	}
+	
+	public List<WebElement> waitForElements(By by) {
+		if(driver == null){
+			try {
+				throw  new Exception("Driver is NULL");
+			} catch (Exception e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		}
+		
+		for (int i = 0; i < 25; i++) {
+			try {
+				driver.findElement(by).isDisplayed();
+				driver.findElement(by).isEnabled();
+				focusElement(by);
+				return driver.findElements(by);
+
+			} catch (Exception e) {
+				pause(500);
+
+			}
+			if(i==25){
+				try {
+					throw new Exception("Element Not Found.  "+by.toString());
+				} catch (Exception e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+			}
+		}
+		return driver.findElements(by);
 
 	}
 	
