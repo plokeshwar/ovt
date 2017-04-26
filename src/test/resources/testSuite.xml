@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Default suite" parallel="tests" thread-count="2">
+  <test verbose="2" name="TS_01">
+    <classes>
+      <class name="com.overture.npc.testcases.TS_01_ValidateLogin"/>
+    </classes>
+  </test>
+  <test verbose="2" name="TS_02">
+    <classes>
+      <class name="com.overture.npc.testcases.TS_02_VerifyHomePage"/>
+    </classes>
+  </test> 
+  <test verbose="2" name="TS_03">
+    <classes>
+      <class name="com.overture.npc.testcases.TS_03_Verify_AccountTab_SubLinkNavigation"/>
+    </classes>
+  </test> 
+  <test verbose="2" name="TS_04">
+    <classes>
+      <class name="com.overture.npc.testcases.TS_04_Verify_AccountTab_AccountSettingsPage"/>
+    </classes>
+  </test> 
+</suite> <!-- Default suite -->
