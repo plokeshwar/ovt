@@ -101,28 +101,37 @@ public class AccountSettingsPage extends PageControls{
 	}
 	
 	public String assertPopUPText(String expected, String actual) {
-		ReporterTextBold("Actual ["+actual+"] : Expected ["+expected+"]");
 		if (expected.equalsIgnoreCase(actual)) {
+			ReporterSuccess("Expected [ "+expected+" ]");
+			ReporterSuccess("Actual [ "+actual+" ]");
 			return captureElementScreenShot(SAVE_CHANGES_POPUP_TEXT);
 		} else {
+			ReporterError("Expected [ "+expected+" ]");
+			ReporterError("Actual [ "+actual+" ]");
 			return captureDriverScreenShot();
 		}
 	}
 	
 	public String assertMessageText(String expected, String actual) {
-		ReporterTextBold("Actual ["+actual+"] : Expected ["+expected+"]");
 		if (expected.equalsIgnoreCase(actual)) {
+			ReporterSuccess("Expected [ "+expected+" ]");
+			ReporterSuccess("Actual [ "+actual+" ]");
 			return captureElementScreenShot(ERROR_MESSAGE);
 		} else {
+			ReporterError("Expected [ "+expected+" ]");
+			ReporterError("Actual [ "+actual+" ]");
 			return captureDriverScreenShot();
 		}
 	}
 	
 	public String assertText(String expected, String actual, By by) {
-		ReporterTextBold("Actual ["+actual+"] : Expected ["+expected+"]");
 		if (expected.equalsIgnoreCase(actual)) {
+			ReporterSuccess("Expected [ "+expected+" ]");
+			ReporterSuccess("Actual [ "+actual+" ]");
 			return captureElementScreenShot(by);
 		} else {
+			ReporterError("Expected [ "+expected+" ]");
+			ReporterError("Actual [ "+actual+" ]");
 			return captureDriverScreenShot();
 		}
 	}

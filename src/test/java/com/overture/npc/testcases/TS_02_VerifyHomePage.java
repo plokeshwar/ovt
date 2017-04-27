@@ -1,6 +1,7 @@
 package com.overture.npc.testcases;
 
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -17,7 +18,6 @@ import com.overture.npc.pages.HomePage;
 import com.overture.npc.pages.LoginPage;
 
 public class TS_02_VerifyHomePage extends CommonMethods {
-	String className = this.getClass().getSimpleName();
 	
 	String homePageUrl;
 
@@ -57,8 +57,9 @@ public class TS_02_VerifyHomePage extends CommonMethods {
 
 		homePage.performMouseOverAccountTab();
 
-		ArrayList<String> expect = homePage.getExpectedArrayList(expectedList);
-		ArrayList<String> actual = homePage.getAccountTabSubMenu();
+		TreeSet<String> expect = homePage.getExpectedArrayList(expectedList);
+		TreeSet<String> actual = homePage.getAccountTabSubMenu();
+		
 		ReporterLink(homePage.captureElementScreenShot(homePage.ACCOUNTS_MENU));
 		System.out.println("Asserting the test case");
 
@@ -75,8 +76,8 @@ public class TS_02_VerifyHomePage extends CommonMethods {
 		String expectedList = "Questions, Populations, Tables, COA, Packaging, School Computed Values";
 		homePage.performMouseOverNetPriceTab();
 
-		ArrayList<String> expect = homePage.getExpectedArrayList(expectedList);
-		ArrayList<String> actual = homePage.getNetPriceSubMenu();
+		TreeSet<String> expect = homePage.getExpectedArrayList(expectedList);
+		TreeSet<String> actual = homePage.getNetPriceSubMenu();
 
 		ReporterLink(homePage.captureElementScreenShot(homePage.NET_PRICE_MENU));
 		System.out.println("Asserting the test case");
@@ -94,8 +95,8 @@ public class TS_02_VerifyHomePage extends CommonMethods {
 
 		homePage.performMouseOverContentManagementTab();
 
-		ArrayList<String> expect = homePage.getExpectedArrayList(expectedList);
-		ArrayList<String> actual = homePage.getContentManagementSubMenu();
+		TreeSet<String> expect = homePage.getExpectedArrayList(expectedList);
+		TreeSet<String> actual = homePage.getContentManagementSubMenu();
 
 		ReporterLink(homePage.captureElementScreenShot(homePage.CONTENT_MANAGEMENT_MENU));
 		System.out.println("Asserting the test case");
@@ -141,7 +142,7 @@ public class TS_02_VerifyHomePage extends CommonMethods {
 	public void beforeClass() {
 		driver = WebDriverManager.getWebDriver();
 		loginPage = new LoginPage(driver);
-		homePage = loginPage.login("pravinAdmin", "Password1!");
+		homePage = loginPage.login();
 		homePageUrl = homePage.getURL(driver);
 	}
 

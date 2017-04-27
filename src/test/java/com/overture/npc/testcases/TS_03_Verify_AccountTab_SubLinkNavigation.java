@@ -20,7 +20,7 @@ import com.overture.npc.pages.LoginPage;
 public class TS_03_Verify_AccountTab_SubLinkNavigation extends CommonMethods{
 	String homePageUrl;
 	
-	String className = this.getClass().getSimpleName();
+	String className = this.getClass().getName().substring(27);
 	String actual, expected;
 	WebDriver driver = null;
 
@@ -116,7 +116,7 @@ public class TS_03_Verify_AccountTab_SubLinkNavigation extends CommonMethods{
 	public void beforeClass() {
 		driver = WebDriverManager.getWebDriver();
 		loginPage = new LoginPage(driver);
-		homePage = loginPage.login("pravinAdmin", "Password1!");
+		homePage = loginPage.login();
 		homePageUrl = homePage.getURL(driver);
 	}
 

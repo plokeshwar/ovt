@@ -1,5 +1,6 @@
 package com.overture.npc.pages;
 
+import java.io.FileInputStream;
 import java.util.Properties;
 
 import org.openqa.selenium.By;
@@ -9,7 +10,7 @@ import com.overture.npc.common.CommonMethods;
 import com.overture.npc.common.PageControls;
 
 public class LoginPage extends PageControls {
-	
+
 	WebDriver driver;
 
 	private By USERNAME = By.id("username");
@@ -23,41 +24,48 @@ public class LoginPage extends PageControls {
 	private By RESET_USER_EMAILADD = By.id("email");
 	private By RESET_BUTTON = By.xpath("//div[@class='submit']//input[@value='Reset']");
 	private By CANCEL_BUTTON = By.xpath("//div[@class='submit']//input[@value='Cancel']");
-	
+
 	public LoginPage(WebDriver driver) {
 		super(driver);
 		this.driver = driver;
 	}
 
-	public void enterUserName(String username){
+	public void enterUserName(String username) {
 		type(USERNAME, username);
 		username = mask(username);
-		ReporterText("Entered Username : "+username);
+		ReporterText("Entered username : " + username);
 	}
-	
-	public void enterPassword(String password){
+
+	public void enterPassword(String password) {
 		type(PASSWORD, password);
 		password = mask(password);
-		ReporterText("Entered Password : "+password);
+		ReporterText("Entered password : " + password);
 	}
-	
-	public void clickLogin(){
+
+	public void clickLogin() {
 		click(LOGIN_BUTTON);
-		ReporterText("Clicking on Login Button.");
+		ReporterText("Clicked Login Button.");
 	}
-	
-	public void enterResetUserID(String testData){
+
+	public void enterResetUserID(String testData) {
 		type(RESET_USER_ID, testData);
 	}
-	
-	public void enterResetUserEmailAddress(String testData){
+
+	public void enterResetUserEmailAddress(String testData) {
 		type(RESET_USER_EMAILADD, testData);
 	}
-	
-	public void clickResetPasswordOkButton(){
+
+	public void clickResetPasswordOkButton() {
 		click(RESET_BUTTON);
 	}
-	
+
+	public HomePage login(String username, String password) {
+		enterUserName(username);
+		enterPassword(password);
+		clickLogin();
+		return new HomePage(driver);
+	}
+
 	public HomePage login() {
 		Properties props = new CommonMethods().getProperties();
 		enterUserName(props.getProperty("username"));
@@ -66,15 +74,7 @@ public class LoginPage extends PageControls {
 		return new HomePage(driver);
 	}
 
-	
-	public HomePage login(String username, String password) {
-		enterUserName(username);
-		enterPassword(password);
-		clickLogin();
-		return new HomePage(driver);
-	}
-
-		public String getErrorText() {
+	public String getErrorText() {
 		return getText(ERROR_MESSAGE);
 	}
 
@@ -103,13 +103,5 @@ public class LoginPage extends PageControls {
 		return tmp;
 		
 	}
-	
-	public static void main(String[] args) {
-		System.out.println(new LoginPage(null).mask("PRAVIN"));
-	}
-	
-	
-	
-	
 
 }

@@ -12,6 +12,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class WebDriverFactory extends Reporting {
@@ -24,7 +25,7 @@ public class WebDriverFactory extends Reporting {
 	
 	
 	public enum selectDriver {
-		CHROME, FIREFOX, IE
+		CHROME, FIREFOX, IE, PHANTOMJS
 	}
 	
 	static WebDriver createInstance() {
@@ -60,19 +61,21 @@ public class WebDriverFactory extends Reporting {
 		case CHROME:
 			System.out.println("Chrome Driver Initiated");
 			driver = getChromeDriver();
-			System.out.println("Chrome Driver Started Successfully");
 			break;
 
 		case FIREFOX:
 			System.out.println("Firefox Driver Initiated");
 			driver = getFirefoxDriver();
-			System.out.println("Firefox Driver Started Successfully");
 			break;
 
 		case IE:
 			System.out.println("IE Driver Initiated");
 			driver = getIE();
-			System.out.println("IE Driver Started Successfully");
+			break;
+			
+		case PHANTOMJS:
+			System.out.println("Phantomjs Driver Initiated");
+			driver = getPhantomJS();
 			break;
 
 		}
@@ -108,7 +111,7 @@ public class WebDriverFactory extends Reporting {
 		capab.setCapability(InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
 
 		System.setProperty("webdriver.ie.driver",
-				System.getProperty("user.dir") + "/drivers/windows/IEDriverServer.exe");
+				System.getProperty("usr.dir") + "/drivers/windows/IEDriverServer.exe");
 		
 		return new InternetExplorerDriver(capab);
 	}
@@ -117,6 +120,22 @@ public class WebDriverFactory extends Reporting {
 		
 		System.out.println(" HELLO FIREFOX DRIVER");
 		return new FirefoxDriver();
+	}
+	
+	public static WebDriver getPhantomJS(){
+		System.out.println("Starting Phantom JS Ghost Browser");
+		DesiredCapabilities dCaps = new DesiredCapabilities();
+		if (MacPlatform()) {
+			dCaps.setCapability("phantomjs.binary.path", "/usr/bin/phantomjs");
+		} else {
+			dCaps.setCapability("phantomjs.binary.path",
+						System.getProperty("usr.dir")  + "/drivers/windows/phantomjs.exe");
+		}
+			
+		
+		dCaps.setJavascriptEnabled(true);
+		dCaps.setCapability("takesScreenshot", true);
+		return new PhantomJSDriver(dCaps);
 	}
 
 	public static boolean MacPlatform() {

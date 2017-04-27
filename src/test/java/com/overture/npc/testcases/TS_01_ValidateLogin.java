@@ -46,6 +46,8 @@ public class TS_01_ValidateLogin extends CommonMethods{
 		ReporterSuccess(testcaseName);
 	}
 
+
+	@BeforeMethod
 	public void beforeMethod() {
 		
 		
@@ -61,7 +63,8 @@ public class TS_01_ValidateLogin extends CommonMethods{
 	public void beforeClass() {
 		driver = WebDriverManager.getWebDriver();
 		loginPage = new LoginPage(driver);
-		
+		//homePage = loginPage.login("pravinAdmin", "Password1!");
+	//homePageUrl = homePage.getURL(driver);
 	}
 
 	@AfterClass

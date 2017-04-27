@@ -49,7 +49,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		String expectedList = "School Name, NPC Exit Url";
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 
 		for (int i = 0; i < actualList.size(); i++) {
@@ -72,7 +72,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnMaintainancePageLink();
 		String expectedList = "Title, Content";
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -95,7 +95,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 		String expectedList = "Net Price Footer, Transportation Help, Books & Supplies Help, Personal Expenses Help, Pie Chart Explanation, Est. Remaining Cost Help, "
 				+ "Est. Self Help Quick Help, Tuition Help, Net Price Regulations, Room & Board Help, Est. Grant Aid Help, Estimated COA Help, EFC Explanation, Est. Net Price Help";
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -117,7 +117,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnMyInformationLink();
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -139,7 +139,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnMyNextStepLink();
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -161,7 +161,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnMyResourcesLink();
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -173,7 +173,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 	}
 	// ===========================================================================================================================
 
-	@Test(priority = 7)
+	//@Test(priority = 7)
 	public void TC_07_Validate_NeedHelp_Link() {
 		String expectedList = "";
 
@@ -183,7 +183,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnNeedHelpLink();
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -205,7 +205,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnNpcWelcomePageLink();
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -226,7 +226,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 		ReporterTextBold("Executing Test Case : " + testcaseName);
 
 	
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.PAGE_NAME_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -258,7 +258,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnParentAssetInfoLink();
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -281,7 +281,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnParentHouseholdInformationLink();
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -303,7 +303,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnParentIncomeInformationLink();
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -325,7 +325,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnPleaseReadLink();
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -347,7 +347,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnStudentFinancesInfoLink();
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -369,7 +369,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnStudentInfoLink();
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);
@@ -390,7 +390,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 
 		contentEditorPage.clickOnTermsAndCoditionsLink();
 
-		ArrayList<String> expect = contentEditorPage.createArrayList(expectedList);
+		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 		for (int i = 0; i < actualList.size(); i++) {
 			String expected = expect.get(i);

@@ -93,7 +93,7 @@ public class ContentEditorPage extends PageControls {
 	 
 	 public void clickOnNpcWelcomePageLink(){
 		 click(NPC_WELCOME_PAGE);
-		 pause(2000);
+		 pause(4000);
 		 ReporterText("Clicked on NPC Welcome Link.");
 	 }
 	 
@@ -141,7 +141,7 @@ public class ContentEditorPage extends PageControls {
 	 }
 	 
 	 public ArrayList<String> getExpectedArrayList(String text){
-			return createArrayList(text);
+			return createaArrayList(text);
 	 }
     
 	 public List<WebElement> getAllLinksInSection(By by){

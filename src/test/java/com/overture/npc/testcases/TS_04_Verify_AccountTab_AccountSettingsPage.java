@@ -255,7 +255,7 @@ public class TS_04_Verify_AccountTab_AccountSettingsPage extends CommonMethods {
 	public void beforeClass() {
 		driver = WebDriverManager.getWebDriver();
 		loginPage = new LoginPage(driver);
-		homePage = loginPage.login("pravinAdmin", "Password1!");
+		homePage = loginPage.login();
 		homePageUrl = homePage.getURL(driver);
 	}
 
