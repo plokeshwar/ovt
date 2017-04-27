@@ -49,13 +49,29 @@ public class HomePage extends PageControls {
 	
 	/*Content Management Tab and related links*/
 	
-	public By CONTENT_MANAGEMENT_TAB = By.id("ui-id-3");
+	public By CONTENT_MANAGEMENT_TAB = By.linkText("Content Management");
 	public By PAGE_CONFIGURATIONS_LINK = By.linkText("Page Configurations");
 	public By CONTENT_EDITOR_LINK = By.linkText("Content Editor");
 	public By NEXT_STEPS_LINK = By.linkText("Next Steps");
 
 	public By CONTENT_MANAGEMENT_MENU = By.xpath("//div[@id='menuTabs-3']");
 	
+	
+	public void clickContentEditorLink(){
+		click(CONTENT_EDITOR_LINK);
+		ReporterText("Clicked on Content Editor Link in Content Managment Page.");
+	}
+	
+	public void clickNextStepsLink(){
+		click(NEXT_STEPS_LINK);
+		ReporterText("Clicked on Next Step Link in Content Managment Page.");
+	}
+	
+	public PageConfigurationsPage clickPageConfigurationLink(){
+		click(PAGE_CONFIGURATIONS_LINK);
+		ReporterText("Clicked on Page Configurations Link in Content Managment Page.");
+		return new PageConfigurationsPage(driver);
+	}
 	/**
 	 * Other locators
 	 */
@@ -123,8 +139,12 @@ public class HomePage extends PageControls {
 	
 	public String assertTitle(String expected, String actual) {
 		if (expected.equalsIgnoreCase(actual)) {
+			ReporterSuccess("Expected [ "+expected+" ]");
+			ReporterSuccess("Actual [ "+actual+" ]");
 			return captureElementScreenShot(PAGE_TITLE);
 		} else {
+			ReporterError("Expected [ "+expected+" ]");
+			ReporterError("Actual [ "+actual+" ]");
 			return captureDriverScreenShot();
 		}
 	}

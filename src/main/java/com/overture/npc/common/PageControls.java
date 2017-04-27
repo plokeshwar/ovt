@@ -199,6 +199,33 @@ public class PageControls extends Reporting{
 			return captureDriverScreenShot();
 		}
 	}
+	
+	public String captureElementScreenShot(WebElement el) {
+		String fileName = String.valueOf(System.currentTimeMillis());
+
+		String filePath = System.getProperty("user.dir") + "/Reports/Screenshot/" + fileName + ".jpg";
+
+		ReporterText("Capturing Element ScreenShot.");
+
+		if (el.isDisplayed() && el.isEnabled()) {
+			for (int i = 0; i < 3; i++) {
+				JavascriptExecutor js = (JavascriptExecutor) driver;
+				js.executeScript("arguments[0].setAttribute('style', arguments[1]);", el,
+						"color: red; border: 2px solid red;");
+
+				File scrFile = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
+				try {
+					FileUtils.copyFile(scrFile, new File(filePath));
+				} catch (IOException e1) {
+					e1.printStackTrace();
+				}
+				js.executeScript("arguments[0].setAttribute('style', arguments[1]);", el, "");
+			}
+			return filePath;
+		} else {
+			return captureDriverScreenShot();
+		}
+	}
 
 	public String captureDriverScreenShot() {
 		String fileName = String.valueOf(System.currentTimeMillis());
