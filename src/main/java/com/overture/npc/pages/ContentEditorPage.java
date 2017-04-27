@@ -18,7 +18,7 @@ public class ContentEditorPage extends PageControls {
 	}
 	 public By CONTENT_TABLE = By.id("categoryTable");
 	 public By PAGE_NAME_TABLE = By.xpath("//div[@class='col1']//ul//li//a");
-	 public By LIST_PAGE_TABLE = By.xpath("//div[@class='subtablerow CP']//div[1]//a");
+	 public By LIST_PAGE_TABLE = By.xpath("//div[@class='view-table']//div//div[1]//a");
 	 public By FRAME_ID = By.id("text_ifr");
 	 
 	 public By COMMON_ACROSS_ALL_PAGE = By.partialLinkText("Common Across All Pages");

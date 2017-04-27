@@ -173,7 +173,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 	}
 	// ===========================================================================================================================
 
-	//@Test(priority = 7)
+	@Test(priority = 7)
 	public void TC_07_Validate_NeedHelp_Link() {
 		String expectedList = "";
 
@@ -315,7 +315,7 @@ public class TS_25_Verify_ContentManagementTab_ContentEditorPage extends CommonM
 	}
 	// ===========================================================================================================================
 
-	@Test(priority = 13)
+	//@Test(priority = 13)
 	public void TC_13_Validate_PleaseRead_Link() {
 		String expectedList = "";
 
