@@ -155,7 +155,7 @@ public class PageConfigurationsPage extends PageControls {
 	 
 	 public ArrayList<String> getExpectedArrayList(String text){
 			return createArrayList(text);
-		}
+	 }
 	 
 	 public ArrayList<String> getAllSectionHeaders(){
 		 ArrayList<String> tmp = new ArrayList<>();

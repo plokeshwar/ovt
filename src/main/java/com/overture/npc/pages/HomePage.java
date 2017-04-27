@@ -57,9 +57,10 @@ public class HomePage extends PageControls {
 	public By CONTENT_MANAGEMENT_MENU = By.xpath("//div[@id='menuTabs-3']");
 	
 	
-	public void clickContentEditorLink(){
+	public ContentEditorPage clickContentEditorLink(){
 		click(CONTENT_EDITOR_LINK);
 		ReporterText("Clicked on Content Editor Link in Content Managment Page.");
+		return new ContentEditorPage(driver);
 	}
 	
 	public void clickNextStepsLink(){
