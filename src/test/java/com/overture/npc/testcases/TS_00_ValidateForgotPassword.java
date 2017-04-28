@@ -3,8 +3,6 @@ package com.overture.npc.testcases;
 import org.testng.annotations.Test;
 
 import com.overture.npc.common.CommonMethods;
-import com.overture.npc.common.Reporting;
-import com.overture.npc.common.WebDriverFactory;
 import com.overture.npc.common.WebDriverManager;
 import com.overture.npc.pages.LoginPage;
 

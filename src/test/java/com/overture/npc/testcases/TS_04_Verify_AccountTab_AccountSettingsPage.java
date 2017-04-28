@@ -12,7 +12,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.overture.npc.common.CommonMethods;
-import com.overture.npc.common.Reporting;
 import com.overture.npc.common.WebDriverManager;
 import com.overture.npc.pages.AccountSettingsPage;
 import com.overture.npc.pages.HomePage;

@@ -1,86 +1,273 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="Default suite" parallel="tests" thread-count="2" allow-return-values="true" configfailurepolicy="continue">
-  <test verbose="2" name="TS_01_ValidateLogin">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_01_ValidateLogin"/>
-    </classes>
-  </test>
-  <test verbose="2" name="TS_02_VerifyHomePage">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_02_VerifyHomePage"/>
-    </classes>
-  </test> 
- <!--   <test verbose="2" name="TS_03_Verify_AccountTab_SubLinkNavigation">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_03_Verify_AccountTab_SubLinkNavigation"/>
-    </classes>
-  </test> 
-  <test verbose="2" name="TS_04_Verify_AccountTab_AccountSettingsPage">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_04_Verify_AccountTab_AccountSettingsPage"/>
-    </classes>
-  </test>
-  
-  <test verbose="2" name="TS_05_Verify_AccountTab_SchoolReportPage">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_05_Verify_AccountTab_SchoolReportPage"/>
-    </classes>
-  </test>
-  <test verbose="2" name="TS_07_Verify_AccountTab_School_PreviewPage">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_07_Verify_AccountTab_School_PreviewPage"/>
-    </classes>
-  </test> 
-  <test verbose="2" name="TS_08_Verify_SchoolPreviewPage_AddTestCaseScreen">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_08_Verify_SchoolPreviewPage_AddTestCaseScreen"/>
-    </classes>
-  </test> 
-  <test verbose="2" name="TS_09_Verify_SchoolPreviewPage_EditTestCaseScreen">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_09_Verify_SchoolPreviewPage_EditTestCaseScreen"/>
-    </classes>
-  </test>
-  <test verbose="2" name="TS_10_Validate_NetPrice_SubLinks_Navigation">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_10_Validate_NetPrice_SubLinks_Navigation"/>
-    </classes>
-  </test>  
-  
-  <test verbose="2" name="TS_11_Verify_NetPriceTab_QuestionsPage_Link_Availability">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_11_Verify_NetPriceTab_QuestionsPage_Link_Availability"/>
-    </classes>
-  </test>
-  <test verbose="2" name="TS_12_Verify_Navigation_of_Links_Available_in_Questions_Page">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_12_Verify_Navigation_of_Links_Available_in_Questions_Page"/>
-    </classes>
-  </test> 
-  <test verbose="2" name="TS_13_Verify_QuestionsPage_StudentInformationScreen">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_13_Verify_QuestionsPage_StudentInformationScreen"/>
-    </classes>
-  </test> 
-  <test verbose="2" name="TS_14_Verify_QuestionsPage_ParentHouseholdScreen">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_14_Verify_QuestionsPage_ParentHouseholdScreen"/>
-    </classes>
-  </test>
-  <test verbose="2" name="TS_15_Verify_QuestionsPage_ParentIncomeScreen">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_15_Verify_QuestionsPage_ParentIncomeScreen"/>
-    </classes>
-  </test>
-  <test verbose="2" name="TS_16_Verify_QuestionsPage_ParentAssetsScreen">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_16_Verify_QuestionsPage_ParentAssetsScreen"/>
-    </classes>
-  </test>
-  <test verbose="2" name="TS_17_Verify_QuestionsPage_StudentFinancesScreen">
-    <classes>
-      <class name="com.overture.npc.testcases.TS_17_Verify_QuestionsPage_StudentFinancesScreen"/>
-    </classes>
-  </test>-->
+<suite name="Default suite" parallel="tests" thread-count="1" allow-return-values="true" configfailurepolicy="continue">
+	<test verbose="2" name="TS_01_ValidateLogin">
+		<classes>
+			<class name="com.overture.npc.testcases.TS_01_ValidateLogin" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_02_VerifyHomePage">
+		<classes>
+			<class name="com.overture.npc.testcases.TS_02_VerifyHomePage" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_03_Verify_AccountTab_SubLinkNavigation">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_03_Verify_AccountTab_SubLinkNavigation" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_04_Verify_AccountTab_AccountSettingsPage">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_04_Verify_AccountTab_AccountSettingsPage" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_05_Verify_AccountTab_SchoolReportPage">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_05_Verify_AccountTab_SchoolReportPage" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_07_Verify_AccountTab_School_PreviewPage">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_07_Verify_AccountTab_School_PreviewPage" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_08_Verify_SchoolPreviewPage_AddTestCaseScreen">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_08_Verify_SchoolPreviewPage_AddTestCaseScreen" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_09_Verify_SchoolPreviewPage_EditTestCaseScreen">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_09_Verify_SchoolPreviewPage_EditTestCaseScreen" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_10_Validate_NetPrice_SubLinks_Navigation">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_10_Validate_NetPrice_SubLinks_Navigation" />
+		</classes>
+	</test>
+	<test verbose="2"
+		name="TS_11_Verify_NetPriceTab_QuestionsPage_Link_Availability">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_11_Verify_NetPriceTab_QuestionsPage_Link_Availability" />
+		</classes>
+	</test>
+	<test verbose="2"
+		name="TS_12_Verify_Navigation_of_Links_Available_in_Questions_Page">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_12_Verify_Navigation_of_Links_Available_in_Questions_Page" />
+		</classes>
+	</test>
+	<test verbose="2"
+		name="TS_13_Verify_QuestionsPage_StudentInformationScreen">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_13_Verify_QuestionsPage_StudentInformationScreen" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_14_Verify_QuestionsPage_ParentHouseholdScreen">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_14_Verify_QuestionsPage_ParentHouseholdScreen" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_15_Verify_QuestionsPage_ParentIncomeScreen">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_15_Verify_QuestionsPage_ParentIncomeScreen" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_16_Verify_QuestionsPage_ParentAssetsScreen">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_16_Verify_QuestionsPage_ParentAssetsScreen" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_17_Verify_QuestionsPage_StudentFinancesScreen">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_17_Verify_QuestionsPage_StudentFinancesScreen" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_19_Verify_NetPriceTab_PackagingPage">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_19_Verify_NetPriceTab_PackagingPage" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_20_Verify_PackagingPage_PackagingTable">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_20_Verify_PackagingPage_PackagingTable" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_21_Verify_PackagingPage_GlobalSettingsTable">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_21_Verify_PackagingPage_GlobalSettingsTable" />
+		</classes>
+	</test>
+	<test verbose="2"
+		name="TS_23_Validate_ContentManagement_SubLinks_Navigation">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_23_Validate_ContentManagement_SubLinks_Navigation" />
+		</classes>
+	</test>
+	<test verbose="2"
+		name="TS_24_Verify_ContentManagementTab_PageConfigurationsPage">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_24_Verify_ContentManagementTab_PageConfigurationsPage" />
+		</classes>
+	</test>
+	<test verbose="2"
+		name="TS_25_Verify_ContentManagementTab_ContentEditorPage">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_25_Verify_ContentManagementTab_ContentEditorPage" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_45_Verify_COA_TuitionNFees">
+		<classes>
+			<class name="com.overture.npc.testcases.TS_45_Verify_COA_TuitionNFees" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_46_Verify_COA_RoomNBoard">
+		<classes>
+			<class name="com.overture.npc.testcases.TS_46_Verify_COA_RoomNBoard" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_47_Verify_COA_BooksNSupplies">
+		<classes>
+			<class name="com.overture.npc.testcases.TS_47_Verify_COA_BooksNSupplies" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_48_Verify_COA_Transportation">
+		<classes>
+			<class name="com.overture.npc.testcases.TS_48_Verify_COA_Transportation" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_49_Verify_COA_PersonalExpenses">
+		<classes>
+			<class name="com.overture.npc.testcases.TS_49_Verify_COA_PersonalExpenses" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_50_Verify_Packaging_Parent_Contribution">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_50_Verify_Packaging_Parent_Contribution" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_51_Verify_Packaging_Student_Contribution">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_51_Verify_Packaging_Student_Contribution" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_53_Verify_Packaging_Student_Work">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_53_Verify_Packaging_Student_Work" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_54_Verify_Packaging_Institutional_Grant_A">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_54_Verify_Packaging_Institutional_Grant_A" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_55_Verify_Packaging_State_Grant_A">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_55_Verify_Packaging_State_Grant_A" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_56_Verify_Packaging_Student_Loan_A">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_56_Verify_Packaging_Student_Loan_A" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_57_Verify_Packaging_Parent_Loan">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_57_Verify_Packaging_Parent_Loan" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_58_Verify_Packaging_Consolidated_Self_Help">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_58_Verify_Packaging_Consolidated_Self_Help" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_59_Verify_Packaging_Institutional_Scholarship_B">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_59_Verify_Packaging_Institutional_Scholarship_B" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_60_Verify_Packaging_Institutional_Scholarship_A">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_60_Verify_Packaging_Institutional_Scholarship_A" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_61_Verify_Packaging_Institutional_Grant_B">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_61_Verify_Packaging_Institutional_Grant_B" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_62_Verify_Packaging_Student_Loan_B">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_62_Verify_Packaging_Student_Loan_B" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_63_Verify_Packaging_Institutional_Scholarship_C">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_63_Verify_Packaging_Institutional_Scholarship_C" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_64_Verify_Packaging_Institutional_Grant_C">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_64_Verify_Packaging_Institutional_Grant_C" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_65_Verify_Packaging_State_Grant_C">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_65_Verify_Packaging_State_Grant_C" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_66_Verify_Packaging_Student_Loan_C">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_66_Verify_Packaging_Student_Loan_C" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_67_Verify_Packaging_School_Defined_Fund1">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_67_Verify_Packaging_School_Defined_Fund1" />
+		</classes>
+	</test>
+	<test verbose="2" name="TS_68_Verify_Packaging_School_Defined_Fund2">
+		<classes>
+			<class
+				name="com.overture.npc.testcases.TS_68_Verify_Packaging_School_Defined_Fund2" />
+		</classes>
+	</test>
 </suite>
