@@ -141,6 +141,7 @@ public class PackagingPage extends PageControls {
 		
 		public void clickSaveChangesPopupYesButton(){
 			click(SAVE_CHANGES_POPUP_YES);
+			pause(2000);
 			ReporterText("Clicked on Save Changes Popup Yes button.");
 		}
 	 public TreeSet<String> getAllLinksFromPackageTable(){
@@ -381,5 +382,7 @@ public class PackagingPage extends PageControls {
 				ReporterText("Deleting the existing list");
 			}
 		}
+	 
+	
 
 }

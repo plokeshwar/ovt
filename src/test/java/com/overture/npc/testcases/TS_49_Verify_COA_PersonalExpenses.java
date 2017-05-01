@@ -144,6 +144,7 @@ public class TS_49_Verify_COA_PersonalExpenses extends CommonMethods{
 		
 			if(COAPage.elementSize(COAPage.COA_FIXED_ROWS)>2){
 				COAPage.deleteCOAExpense();
+				COAPage.clickPersonalExpensesLink();
 			}
 	}
 

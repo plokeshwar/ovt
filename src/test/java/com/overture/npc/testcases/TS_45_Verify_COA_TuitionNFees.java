@@ -144,6 +144,7 @@ public class TS_45_Verify_COA_TuitionNFees extends CommonMethods {
 		
 			if(COAPage.elementSize(COAPage.COA_FIXED_ROWS)>2){
 				COAPage.deleteCOAExpense();
+				COAPage.clickTuitionFeeLink();
 			}
 	}
 

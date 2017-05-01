@@ -129,7 +129,7 @@ public class WebDriverFactory extends Reporting {
 			dCaps.setCapability("phantomjs.binary.path", "/usr/bin/phantomjs");
 		} else {
 			dCaps.setCapability("phantomjs.binary.path",
-						System.getProperty("usr.dir")  + "/drivers/windows/phantomjs.exe");
+						System.getProperty("user.dir")  + "/drivers/windows/phantomjs.exe");
 		}
 			
 		

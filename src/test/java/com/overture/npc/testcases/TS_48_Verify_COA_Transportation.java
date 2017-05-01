@@ -137,6 +137,7 @@ public class TS_48_Verify_COA_Transportation extends CommonMethods {
 		
 			if(COAPage.elementSize(COAPage.COA_FIXED_ROWS)>2){
 				COAPage.deleteCOAExpense();
+				COAPage.clickTransportationLink();
 			}
 	}
 

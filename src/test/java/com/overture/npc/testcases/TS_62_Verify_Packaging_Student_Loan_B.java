@@ -173,6 +173,7 @@ public class TS_62_Verify_Packaging_Student_Loan_B extends CommonMethods {
 		packagingPage.clickPackagingTabLink();
 		packagingPage.clickStudentLoanBLink();
 		
+		
 		if (packagingPage.getAssignmentPackageList().size() > 0) {
 			packagingPage.deleteAssignmentPackages();
 			packagingPage.clickEditPackageSaveButton();
