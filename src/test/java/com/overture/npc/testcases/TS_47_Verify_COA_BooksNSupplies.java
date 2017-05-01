@@ -145,6 +145,7 @@ public class TS_47_Verify_COA_BooksNSupplies extends CommonMethods {
 		
 			if(COAPage.elementSize(COAPage.COA_FIXED_ROWS)>2){
 				COAPage.deleteCOAExpense();
+				COAPage.clickBookAndSuppliesLink();
 			}
 	}
 

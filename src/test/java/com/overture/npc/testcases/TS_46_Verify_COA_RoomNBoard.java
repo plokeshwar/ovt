@@ -141,6 +141,8 @@ public class TS_46_Verify_COA_RoomNBoard extends CommonMethods {
 
 		if (COAPage.elementSize(COAPage.COA_FIXED_ROWS) > 2) {
 			COAPage.deleteCOAExpense();
+			COAPage.clickRoomBoardLink();
+
 		}
 	}
 

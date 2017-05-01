@@ -19,6 +19,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.phantomjs.PhantomJSDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 
 
 public class PageControls extends CommonMethods {
@@ -444,5 +445,28 @@ public class PageControls extends CommonMethods {
 		return flag;
 	}
 	
+	public boolean checkCurrentAppStatus(){
+		boolean flag = false;
+		String actualStatus = driver.getTitle();
+		if(actualStatus.contains("Error")){
+			System.err.println("Application Status :  "+actualStatus);
+			String error = driver.findElement(By.xpath("//div[@class='alert']//h3")).getText();
+			
+			if(error.equalsIgnoreCase("Server Error Message")){
+				ReporterLinkError(captureDriverScreenShot(), "Server Error Message");
+				driver.navigate().back();
+				flag = true;
+			}else{
+				ReporterLinkError(captureDriverScreenShot(), "Application Error");
+				driver.navigate().back();
+			}
+			
+		}else{
+			System.out.println("Application Status :  "+actualStatus);
+		}
+		
+		return flag;
+		
+	}
 	
 }

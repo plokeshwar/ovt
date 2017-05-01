@@ -274,6 +274,7 @@ public class TS_09_Verify_SchoolPreviewPage_EditTestCaseScreen extends CommonMet
 
 			schoolPreviewPage.clickDeleteButton();
 			schoolPreviewPage.acceptAlert();
+			schoolPreviewPage.checkAppStatus();
 			flag = false;
 			ReporterText("Test Case Deleted Successfully.");
 		}

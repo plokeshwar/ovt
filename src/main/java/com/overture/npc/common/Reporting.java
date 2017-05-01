@@ -20,7 +20,7 @@ public class Reporting {
 	
 	public void ReporterError(String message) {
 		System.setProperty("org.uncommons.reportng.escape-output", "false");
-		System.out.println("Reporting Error : "+message);
+		System.err.println("Reporting Error : "+message);
 		Reporter.log("<br><span style='color: red;'><b>" + message + "</b></span>");
 	}
 	
@@ -43,5 +43,12 @@ public class Reporting {
 		System.out.println("Reporting Link : "+screenshotFile);
 		Reporter.log("<a href=\""+screenshotFile
 				+ "\"><p align=\"left\"><h4>Screenshot : "+message+"</h4></p></a>");
+	}
+	
+	public void ReporterLinkError(String screenshotFile, String message) {
+		System.setProperty("org.uncommons.reportng.escape-output", "false");
+		System.out.println("Reporting Link : "+screenshotFile);
+		Reporter.log("<a href=\""+screenshotFile
+				+ "\"><p align=\"left\"><h4 style='color: red;'>Screenshot : "+message+"</h4></p></a>");
 	}
 }

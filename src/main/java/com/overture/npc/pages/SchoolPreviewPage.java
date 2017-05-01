@@ -139,4 +139,11 @@ public class SchoolPreviewPage extends PageControls {
 	public void dismissAlertPopup(){
 		dismissAlert();
 	}
+	
+	public boolean checkAppStatus(){
+		boolean flag = false;
+		flag = checkCurrentAppStatus();
+		clickCancelButton();
+		return flag;
+	}
 }

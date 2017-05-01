@@ -27,6 +27,10 @@ public class TS_08_Verify_SchoolPreviewPage_AddTestCaseScreen extends CommonMeth
 	LoginPage loginPage = null;
 	HomePage homePage = null;
 	SchoolPreviewPage schoolPreviewPage = null;
+	
+	boolean appstatus = false;
+	
+	
 
 	@Test(priority = 1)
 	public void TC_01_Validate_TestCaseName_Editbox_InvalidData() {
@@ -128,8 +132,13 @@ public class TS_08_Verify_SchoolPreviewPage_AddTestCaseScreen extends CommonMeth
 
 			schoolPreviewPage.clickDeleteButton();
 			schoolPreviewPage.acceptAlert();
+		appstatus = schoolPreviewPage.checkAppStatus();
+		Assert.assertEquals(appstatus, false, "Application status is not valid.");
 			flag = false;
-			ReporterText("Test Case Deleted Successfully.");
+			//ReporterText("Test Case Deleted Successfully.");	
+			
+			
+		
 		}
 	}
 

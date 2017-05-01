@@ -89,6 +89,23 @@ public class PackagingPage extends PageControls {
 		private By SAVE_CHANGES_POPUP_TEXT = By.xpath("//div//h6");
 		
 		
+		
+		public void clickOnStateGrantALink(){
+			click(STATE_GRANT_A_LINK);
+			ReporterText("Clicked on State Grant A link.");
+		}
+		
+		public void clickOnStateGrantBLink(){
+			click(STATE_GRANT_B_LINK);
+			ReporterText("Clicked on State Grant B link.");
+		}
+		
+		public void clickOnStateGrantCLink(){
+			click(STATE_GRANT_C_LINK);
+			ReporterText("Clicked on State Grant C link.");
+		}
+		
+		
 		public void clickOnFixedLink(){
 			click(FIXED_LINK);
 			ReporterText("Clicked on fixed link present in the Edit  Parent Contribution page.");
@@ -124,6 +141,7 @@ public class PackagingPage extends PageControls {
 		
 		public void clickSaveChangesPopupYesButton(){
 			click(SAVE_CHANGES_POPUP_YES);
+			pause(2000);
 			ReporterText("Clicked on Save Changes Popup Yes button.");
 		}
 	 public TreeSet<String> getAllLinksFromPackageTable(){
@@ -182,6 +200,66 @@ public class PackagingPage extends PageControls {
 	 public void clickInstitutionalGrantALink(){
 		 click(INSTITUTIONAL_GRANT_LINK);
 		 ReporterText("Clicking on Institutional Grant A link.");
+	 }
+	 
+	 public void clickInstitutionalGrantBLink(){
+		 click(INSTITUTIONAL_GRANT_B_LINK);
+		 ReporterText("Clicking on Institutional Grant B link.");
+	 }
+	 
+	 public void clickInstitutionalGrantCLink(){
+		 click(INSTITUTIONAL_GRANT_C_LINK);
+		 ReporterText("Clicking on Institutional Grant C link.");
+	 }
+	 
+	 public void clickStudentLoanALink(){
+		 click(STUDENT_LOAN_A_LINK);
+		 ReporterText("Clicking on Student Loan A link.");
+	 }
+	 
+	 public void clickStudentLoanBLink(){
+		 click(STUDENT_LOAN_B_LINK);
+		 ReporterText("Clicking on Student Loan B link.");
+	 }
+	 
+	 public void clickStudentLoanCLink(){
+		 click(STUDENT_LOAN_C_LINK);
+		 ReporterText("Clicking on Student Loan C link.");
+	 }
+	 
+	 public void clickParentLoanLink(){
+		 click(PARENT_LOAN_LINK);
+		 ReporterText("Clicked on Parent Loan Link in the Packaging Screen.");
+	 }
+	 
+	 public void clickInstitutionalScholarshipALink(){
+		 click(INSTITUTIONAL_SCHOLARSHIP_A_LINK);
+		 ReporterText("Clicked on Institutional Scholarship A Link in the Packaging Screen.");
+	 }
+	 
+	 public void clickInstitutionalScholarshipBLink(){
+		 click(INSTITUTIONAL_SCHOLARSHIP_B_LINK);
+		 ReporterText("Clicked on Institutional Scholarship B Link in the Packaging Screen.");
+	 }
+	 
+	 public void clickInstitutionalScholarshipCLink(){
+		 click(INSTITUTIONAL_SCHOLARSHIP_C_LINK);
+		 ReporterText("Clicked on Institutional Scholarship C Link in the Packaging Screen.");
+	 }
+	 
+	 public void clickConsolidatedSelfHelpLink(){
+		 click(CONSOLIDATED_SELF_HELP_LINK);
+		 ReporterText("Clicked on Consolidated Self Help Link in the Packaging Screen.");
+	 }
+	 
+	 public void clickSchoolDefinedFund1Link(){
+		 click(SCHOOL_DEFINED_FUND_1_LINK);
+		 ReporterText("Clicked on School Defined Fund 1 Link in the Packaging Screen.");
+	 }
+	 
+	 public void clickSchoolDefinedFund2Link(){
+		 click(SCHOOL_DEFINED_FUND_2_LINK);
+		 ReporterText("Clicked on School Defined Fund 2 Link in the Packaging Screen.");
 	 }
 	 
 	 public void clickGlobalSettingsSaveButton(){
@@ -304,5 +382,7 @@ public class PackagingPage extends PageControls {
 				ReporterText("Deleting the existing list");
 			}
 		}
+	 
+	
 
 }

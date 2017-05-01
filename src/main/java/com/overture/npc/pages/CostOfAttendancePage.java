@@ -18,7 +18,7 @@ public class CostOfAttendancePage extends PageControls {
 	public By TUITION_FEE_LINK = By.xpath("//table[@id='coaTable']//a[contains(.,'Tuition & Fees')]");
 	public By ROOM_BOARD_LINK = By.xpath("//table[@id='coaTable']//a[contains(.,'Room & Board')]");
 	public By BOOK_SUPPLIES_LINK = By.xpath("//table[@id='coaTable']//a[contains(.,'Books & Supplies')]");
-	public By TRANSPORTATION_LINK = By.xpath("//table[@id='coaTable']//a[contains(.,'Transportation')]");
+	public By TRANSPORTATION_LINK = By.linkText("Transportation");
 	public By PERSONAL_EXPENSES_LINK = By.xpath("//table[@id='coaTable']//a[contains(.,'Personal Expenses')]");
 	public By PAGE_TITLE = By.xpath("//div[@class='pageTit']");
 	public By FIXED_LINK = By.name("addFixedRow");
@@ -79,6 +79,7 @@ public class CostOfAttendancePage extends PageControls {
 	
 	public void clickFixedLink(){
 		click(FIXED_LINK);
+		pause(2000);
 		ReporterText("Clicking on Fixed Link in Edit Expense page.");
 	}
 	
