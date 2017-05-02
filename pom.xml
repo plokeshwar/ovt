@@ -39,6 +39,7 @@
 			<scope>test</scope>
 		</dependency>
 
+
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -85,7 +86,8 @@
 						<property>
 							<name>listener</name>
 							<value>org.uncommons.reportng.HTMLReporter,
-								org.uncommons.reportng.JUnitXMLReporter</value>
+								org.uncommons.reportng.JUnitXMLReporter,
+								com.overture.npc.common.RetryListener</value>
 						</property>
 					</properties>
 				</configuration>
