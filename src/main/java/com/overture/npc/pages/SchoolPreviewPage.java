@@ -43,6 +43,7 @@ public class SchoolPreviewPage extends PageControls {
 	
 	public void clickSaveButton(){
 		click(SAVE_BUTTON);
+		pause(3000);
 		ReporterText("Clicked on Save Button.");
 	}
 	
