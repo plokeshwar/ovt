@@ -10,6 +10,7 @@ import org.openqa.selenium.WebElement;
 import org.testng.Assert;
 
 import com.overture.npc.common.PageControls;
+import com.thoughtworks.selenium.webdriven.commands.IsAlertPresent;
 
 public class PackagingPage extends PageControls {
 	
@@ -119,6 +120,12 @@ public class PackagingPage extends PageControls {
 		public String getPackageFieldValue(){
 			String tmp = getAttributeValue(EDIT_PACKAGE_INPUT_FIELD, "value");
 			ReporterText("Getting attribute value from field Edit Package Input Field.  "+tmp);
+			return tmp;
+		}
+		
+		public String getValidationError(){
+			String tmp = getText(VALIDATION_ERROR);
+			ReporterText("Extracting value from Validation Error.  : "+tmp);
 			return tmp;
 		}
 		
@@ -267,6 +274,11 @@ public class PackagingPage extends PageControls {
 		 ReporterText("Clicked on Global Settings Save Button in the Packaging Screen.");
 	 }
 	 
+	 public void clickGlobalSettingsCancelButton(){
+		 click(GLOBAL_SETTINGS_CANCEL_BUTTON);
+		 ReporterText("Clicked on Global Settings Cancel Button in the Packaging Screen.");
+	 }
+	 
 	 public String getPackagingTabText(){
 		 return getText(PACKAGING_TAB_LINK);
 	 }
@@ -366,6 +378,51 @@ public class PackagingPage extends PageControls {
 			 } 
 				
 	}
+	 
+	 public boolean globalSettingsTextBoxValidator_Invalid(By by, String txt) {
+		 boolean flag = true;
+		 List<WebElement> element = driver.findElements(by);
+			String expected=null;
+			Iterator<WebElement> i = element.iterator(); 
+			 while(i.hasNext()) { 
+				WebElement anchor = i.next(); 
+				if(anchor.isDisplayed()){
+					
+					String name=anchor.getAttribute("name");
+					String value=anchor.getAttribute("value");
+						if(!anchor.isSelected())
+						{
+						anchor.click();
+						}
+					WebElement el=driver.findElement(By.name(name.substring(0,name.indexOf("Status"))+"Value["+value+"]"));
+					type(el, txt);
+					clickGlobalSettingsSaveButton();
+					
+					if(isAlertPresent()){
+						acceptAlert();
+						flag = checkAppStatus();
+					}
+					
+					
+					if(name.contains("Cap")){
+						expected="Cap field should be a number.";
+					}
+					else{
+						expected="Floor field should be a number.";
+					}
+				
+					String actual = getValidationError();
+					
+					
+					String screenshot = assertText(expected, actual, VALIDATION_ERROR);
+					ReporterLink(screenshot);
+					el.clear();
+					anchor.click();
+				 }	 
+			 } 
+			
+			 return flag;
+	}
     
 	 public void deleteAssignmentPackages(){
 			WebElement el=null;
@@ -383,6 +440,11 @@ public class PackagingPage extends PageControls {
 			}
 		}
 	 
-	
+	 public boolean checkAppStatus(){
+			boolean flag = false;
+			flag = checkCurrentAppStatus();
+			
+			return flag;
+		}
 
 }

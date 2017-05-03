@@ -109,6 +109,16 @@ public class PageControls extends CommonMethods {
 	public void browserClose(WebDriver driver) {
 		driver.quit();
 	}
+	
+	public boolean isAlertPresent(){
+		try {
+			driver.switchTo().alert();
+			return true;
+		} catch (Exception e) {
+			// TODO: handle exception
+			return false;
+		}
+	}
 
 	public void acceptAlert() {
 		if (driver instanceof PhantomJSDriver) {

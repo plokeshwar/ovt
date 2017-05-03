@@ -34,7 +34,7 @@ String className=this.getClass().getSimpleName();
 	PackagingPage packagingPage;
 	
 	
-	@Test(priority = 1)
+	//@Test(priority = 1)
 	public void TC_01_Validate_AvailabilityOfTwo_Tables_in_GlobalSettingsTab() {
 		String testcaseName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
@@ -55,7 +55,7 @@ String className=this.getClass().getSimpleName();
 
 
 	
-	@Test(priority = 2)
+	//@Test(priority = 2)
 	public void TC_02_Validate_Checkbox_Enabled_CapLimit() {
 		String testcaseName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
@@ -73,7 +73,7 @@ String className=this.getClass().getSimpleName();
 	//===========================================================================================================================
 	
 	
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	public void TC_03_Validate_Checkbox_Enabled_FloorLimit() {
 		String testcaseName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
@@ -87,7 +87,7 @@ String className=this.getClass().getSimpleName();
 	}
 	//===========================================================================================================================
 	
-	@Test(priority = 5)
+	//@Test(priority = 5)
 	public void TC_05_Validate_CapLimitAmount_ValidData() {
 		String testcaseName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
@@ -98,25 +98,31 @@ String className=this.getClass().getSimpleName();
 	
 	//===========================================================================================================================
 	
-	@Test(priority = 6)
+	//@Test(priority = 6)
 	public void TC_06_Validate_FloorLimitAmount_ValidData() {
 		String testcaseName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
 		ReporterTextBold("Executing Test Case : " + testcaseName);
-		System.out.println("Asserting the test case");
+		
+		ReporterText("Validating Test Boxes with Valid Data.");
 		packagingPage.globalSettingsTextBoxValidator_Valid(packagingPage.GLOBAL_SETTINGS_GLOBAL_FLOORLIST, "123");
 	}
 	
 	//===========================================================================================================================
 
 
-	/*@Test(priority = 7)
+	@Test(priority = 7)
 	public void TC_07_Validate_CapLimitAmount_InvalidData() {
 		String testcaseName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
 		ReporterTextBold("Executing Test Case : " + testcaseName);
-		System.out.println("Asserting the test case");
-		co.globalSettingsTextBoxValidator_Invalid(driver, packagingPage.globalSettingsGlobalCapList, "ABC");
+		
+		ReporterText("Validating Test Boxes with Valid Data.");
+		boolean expected = true;
+		boolean actual =	packagingPage.globalSettingsTextBoxValidator_Invalid(packagingPage.GLOBAL_SETTINGS_GLOBAL_CAPLIST, "ABC");
+		String screenshot = packagingPage.assertBoolean(expected, actual, packagingPage.GLOBAL_SETTINGS_GLOBAL_CAPLIST);
+		ReporterLink(screenshot);
+		Assert.assertEquals(actual, expected);
 	}
 	
 	//===========================================================================================================================
@@ -126,14 +132,19 @@ String className=this.getClass().getSimpleName();
 		String testcaseName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
 		ReporterTextBold("Executing Test Case : " + testcaseName);
-		System.out.println("Asserting the test case");
-		co.globalSettingsTextBoxValidator_Invalid(driver, packagingPage.globalSettingsGlobalFloorList, "ABC");
+		ReporterText("Validating Test Boxes with Valid Data.");
+		boolean expected = true;
+		boolean actual = packagingPage.globalSettingsTextBoxValidator_Invalid(packagingPage.GLOBAL_SETTINGS_GLOBAL_FLOORLIST, "ABC");
+		String screenshot = packagingPage.assertBoolean(expected, actual, packagingPage.GLOBAL_SETTINGS_GLOBAL_FLOORLIST);
+		ReporterLink(screenshot);
+		Assert.assertEquals(actual, expected);
+
 	}
 	
 	//===========================================================================================================================
 	
 	
-	@Test(priority = 9)
+	//@Test(priority = 9)
 	public void TC_09_Validate_SaveChanges_Button_Action() {
 		String testcaseName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
@@ -141,37 +152,41 @@ String className=this.getClass().getSimpleName();
 
 		String expected="Are you sure you want to save?";
 		
-		co.click(packagingPage.globalSettingsTabLink, "Clicking on Global Settings Tab in Packaging page.");
-		co.click(packagingPage.globalSettingsSaveChangesButton, "Clicking Save Changes Button in Global Settings Tabe.");
-
-		String actual=co.alertHandler(driver).getText();
+		packagingPage.clickGlobalSettingsTabLink();
+		packagingPage.clickGlobalSettingsSaveButton();
 		
-		co.alertHandler(driver).dismiss();
+		String actual=packagingPage.getAlertText();
 		
-		Reporter.log(cm.ReporterText("Screen Shot Not Taken, as Validating Pop-up."));
+		packagingPage.dismissAlert();
+		
+		String screenshot = packagingPage.assertText(expected, actual, packagingPage.GLOBAL_SETTINGS_TAB_LINK);
+		ReporterLink(screenshot, "Alert ScreenShot Not Taken as Validating PopUP Existence");
 		System.out.println("Asserting the test case");
 		Assert.assertEquals(actual, expected);
+		ReporterSuccess(testcaseName);
 	}
 	
 	//============================================================================================
 	
 	
-	@Test(priority = 10)
+	//@Test(priority = 10)
 	public void TC_10_Validate_Cancel_Button_Action() {
 		String testcaseName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
 		ReporterTextBold("Executing Test Case : " + testcaseName);
 
-		co.click(packagingPage.globalSettingsTabLink, "Clicking on Global Settings Tab in Packaging page.");
-		co.click(packagingPage.globalSettingsCancelButton, "Clicking Cancel Button in Global Settings Tab.");
-
-		cm.captureElementScreenShot(driver, packagingPage.packagingTabLink, ScreenshotName, cm.basepath());
-		Reporter.log(cm.ReporterLink(ScreenshotName));
-		System.out.println("Asserting the test case");
-		Assert.assertEquals(packagingPage.packagingTabLink.isEnabled(), true,"The Cancel Button Action in Global Settings Tab Failed.");
+		packagingPage.clickGlobalSettingsTabLink();
+		packagingPage.clickGlobalSettingsCancelButton();
+		
+		boolean expected = true;
+		boolean actual = packagingPage.isEnabled(packagingPage.PACKAGING_TAB_LINK);
+		
+		String screenshot = packagingPage.assertBoolean(expected, actual, packagingPage.PACKAGING_TAB_LINK);
+		ReporterLink(screenshot, "Cancel Button Status");
+		Assert.assertEquals(actual, expected, "One of the check boxes are disabled.");
 		
 	}
-	*/
+	
 	//============================================================================================
 	
 	

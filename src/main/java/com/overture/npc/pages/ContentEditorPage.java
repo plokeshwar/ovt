@@ -19,6 +19,7 @@ public class ContentEditorPage extends PageControls {
 	 public By CONTENT_TABLE = By.id("categoryTable");
 	 public By PAGE_NAME_TABLE = By.xpath("//div[@class='col1']//ul//li//a");
 	 public By LIST_PAGE_TABLE = By.xpath("//div[@class='view-table']//div//div[1]//a");
+	 public By LIST_PAGE_SUBLINKS = By.xpath("//div[@class='view-table']//div//div[3]//a");
 	 public By FRAME_ID = By.id("text_ifr");
 	 
 	 public By COMMON_ACROSS_ALL_PAGE = By.partialLinkText("Common Across All Pages");
@@ -49,6 +50,28 @@ public class ContentEditorPage extends PageControls {
 	 public By POPUP_HEADER_POPULATION_CONTENT = By.xpath("//div[@id='categoryTable']/div[@class='popHeader']");
 	 public By POP_UP_HEADER_COUNT = By.id("ui-dialog-title-popUpArea");
 	
+	 public void clickOnContentRegionPopUpBody(){
+		 click(CONTENT_REGION_NAME_POPUP_BODY);
+		 ReporterText("Clicked on content region pop-up body.");
+	 }
+	 
+	 public void clickOnContentRegionPopUpButton(){
+		 click(CONTENT_REGION_NAME_POPUP_BUTTON);
+		 ReporterText("Clicked on content region pop-up button.");
+	 }
+	 
+	 public void enterValueInContentRegionPopUPBody(String testData){
+		 type(CONTENT_REGION_NAME_POPUP_BODY, testData);
+		 ReporterText("Entered value in Content Region Popup Body. "+testData);
+		 
+	 }
+	 
+	 public void clickOnPopUpCloseButton(){
+		 click(POP_UP_CLOSE_COMMON_APP);
+		 pause(1000);
+		 ReporterText("Clicking on pop up close button.");
+	 }
+	 
 	 public void clickOnCommonAcrossAllPageLink(){
 		 click(COMMON_ACROSS_ALL_PAGE);
 		 pause(2000);
