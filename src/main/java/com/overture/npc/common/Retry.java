@@ -4,8 +4,8 @@ import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
 public class Retry implements IRetryAnalyzer {
-    private int retryCount = 2;
-    private int maxRetryCount = 4;
+    private int retryCount = 1;
+    private int maxRetryCount = 2;
 
 // Below method returns 'true' if the test method has to be retried else 'false' 
 //and it takes the 'Result' as parameter of the test method that just ran

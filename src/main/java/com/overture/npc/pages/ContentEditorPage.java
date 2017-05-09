@@ -6,7 +6,6 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-
 import com.overture.npc.common.PageControls;
 
 public class ContentEditorPage extends PageControls {
@@ -50,6 +49,12 @@ public class ContentEditorPage extends PageControls {
 	 public By POPUP_HEADER_POPULATION_CONTENT = By.xpath("//div[@id='categoryTable']/div[@class='popHeader']");
 	 public By POP_UP_HEADER_COUNT = By.id("ui-dialog-title-popUpArea");
 	
+	 public String getParagraphContent(){
+		 String tmp = getText(CONTENT_REGION_NAME_POPUP_PARAGRAPH);
+		 ReporterText("Extracting text from paragraph content. "+tmp);
+		 return tmp;
+	 }
+	 
 	 public void clickOnContentRegionPopUpBody(){
 		 click(CONTENT_REGION_NAME_POPUP_BODY);
 		 ReporterText("Clicked on content region pop-up body.");
@@ -171,6 +176,8 @@ public class ContentEditorPage extends PageControls {
 		 return driver.findElements(by);
 	 }
 	 
+	
+	 
 	 public String assertBoolean(boolean expected, boolean actual, By by) {
 			if (expected == actual) {
 				ReporterSuccess("Expected [ "+expected+" ]");
@@ -202,6 +209,19 @@ public class ContentEditorPage extends PageControls {
 				ReporterSuccess("Expected [ "+expected+" ]");
 				ReporterSuccess("Actual [ "+actual+" ]");
 				return captureElementScreenShot(el);
+			} else {
+				ReporterError("Expected [ "+expected+" ]");
+				ReporterError("Actual [ "+actual+" ]");
+				return captureDriverScreenShot();
+			}
+		}
+	 
+	 public String assertText(String expected, String actual) {
+			
+			if (expected.equalsIgnoreCase(actual)) {
+				ReporterSuccess("Expected [ "+expected+" ]");
+				ReporterSuccess("Actual [ "+actual+" ]");
+				return captureDriverScreenShot();
 			} else {
 				ReporterError("Expected [ "+expected+" ]");
 				ReporterError("Actual [ "+actual+" ]");

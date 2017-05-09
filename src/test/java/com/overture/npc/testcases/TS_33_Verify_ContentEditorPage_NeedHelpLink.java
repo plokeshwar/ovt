@@ -19,8 +19,9 @@ import com.overture.npc.pages.ContentEditorPage;
 import com.overture.npc.pages.HomePage;
 import com.overture.npc.pages.LoginPage;
 
-public class TS_26_Verify_ContentEditorPage_CommonAcrossAllPagesLink extends CommonMethods {
 
+public class TS_33_Verify_ContentEditorPage_NeedHelpLink extends CommonMethods {
+	
 	String homePageUrl;
 
 	String className = this.getClass().getSimpleName();
@@ -29,14 +30,15 @@ public class TS_26_Verify_ContentEditorPage_CommonAcrossAllPagesLink extends Com
 	LoginPage loginPage = null;
 	HomePage homePage = null;
 	ContentEditorPage contentEditorPage = null;
-
-	@Test(priority = 1)
-	public void TC_01_Validate_ViewDefault_Link_Availabilty() {
+	
+	//@Test(priority = 1)
+	public void TC_01_Validate_ViewDefault_Links() {
 		String testcaseName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
 		ReporterTextBold("Executing Test Case : " + testcaseName);
 
-		String expectedList = "View Default, View Default";
+		String expectedList = "View Default";
+		
 
 		ArrayList<String> expect = contentEditorPage.getExpectedArrayList(expectedList);
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_SUBLINKS);
@@ -51,16 +53,16 @@ public class TS_26_Verify_ContentEditorPage_CommonAcrossAllPagesLink extends Com
 
 		Assert.assertEquals(actualList.size(), expect.size(), "The list size did not match");
 	}
-	// ===========================================================================================================================
-
+	//===========================================================================================================================
+	
 	@Test(priority = 2)
 	public void TC_02_Validate_PopUps_ContentRegion() {
 		String testcaseName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
 		ReporterTextBold("Executing Test Case : " + testcaseName);
-
-		String[] expectedList = { "Common Across All Pages - School Name", "Common Across All Pages - NPC Exit Url" };
-
+		
+		String [] expectedList ={"Student Finances (& Household) Information - Helpful Information"};
+		
 		List<WebElement> actualList = contentEditorPage.getAllLinksInSection(contentEditorPage.LIST_PAGE_TABLE);
 
 		for (int i = 0; i < actualList.size(); i++) {
@@ -82,11 +84,11 @@ public class TS_26_Verify_ContentEditorPage_CommonAcrossAllPagesLink extends Com
 		}
 
 	}
-	// ===========================================================================================================================
-
+	//===========================================================================================================================
+	
 	@Test(priority = 3)
 	public void TC_03_Validate_PopUps_DefaultContent() {
-
+		
 		String testcaseName = new Object() {
 		}.getClass().getEnclosingMethod().getName();
 		ReporterTextBold("Executing Test Case : " + testcaseName);
@@ -111,9 +113,8 @@ public class TS_26_Verify_ContentEditorPage_CommonAcrossAllPagesLink extends Com
 			contentEditorPage = new ContentEditorPage(driver);
 		}
 	}
-
-	// ===========================================================================================================================
-
+	//===========================================================================================================================
+	
 	@Test(priority = 4)
 	public void TC_04_Validate_PopUpBody_ContentRegion() {
 		String testcaseName = new Object() {
@@ -283,13 +284,13 @@ public class TS_26_Verify_ContentEditorPage_CommonAcrossAllPagesLink extends Com
 			
 		}
 	}
-
-	// ===========================================================================================================================
+	//===========================================================================================================================
+	
 	@BeforeMethod
 	public void BeforeMethod() {
 		homePage.performMouseOverContentManagementTab();
 		contentEditorPage = homePage.clickContentEditorLink();
-		contentEditorPage.clickOnCommonAcrossAllPageLink();
+		contentEditorPage.clickOnNeedHelpLink();
 
 	}
 
@@ -309,5 +310,4 @@ public class TS_26_Verify_ContentEditorPage_CommonAcrossAllPagesLink extends Com
 	public void afterClass() {
 		closeBrowser();
 	}
-
 }
